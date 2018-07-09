@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<settings>
+		<!-- 启用日志记录 -->
+		<setting name="logImpl" value="LOG4J" />
+	</settings>
+	<!-- 和spring整合后enviroments配置将废除 -->
+	<typeAliases>
+		<!-- 单个定义别名 -->
+		<!-- <typeAlias type="com.aaa.entity.User" alias="user"/> -->
+		<!-- 批量定义别名 -->
+		<package name="com.aaa.entity" />
+	</typeAliases>
+
+	<!-- 注册分页插件 -->
+	<plugins>
+		<plugin interceptor="com.github.pagehelper.PageInterceptor">
+		</plugin>
+	</plugins>
+</configuration>
